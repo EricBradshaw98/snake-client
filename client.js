@@ -14,16 +14,19 @@ const connect = function () {
     // code that does something when the connection is first established
     console.log("Connected to game server");
   });
+  //add initials
   conn.write("Name: ECB");
 
 
   conn.on("data", (data) => {
     // code to handle incoming data and log it
     console.log("Incoming data:", data);
+    //conn.write("Move: up");
+
+
   });
 
   return conn;
 };
-console.log("Connecting ...");
-const conn = connect();
+
 module.exports = { connect };
